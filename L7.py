@@ -17,13 +17,14 @@ print("""
       """)
 query = input('Enter your dork : ')
 max_urls = int(input('How much sites you want ? '))
+max_urls_pr = max_urls
 if (max_urls > 100):
-    max_urls = 100
-    print('the max sites now is 100')
-langu = input('lang you want ex: en,ar ? ')
+    max_urls_pr = 100
+
+langu = input('what web lang you want ex: en,ar ? ')
 
 array = []
-for i in googlesearch.search(query,num=max_urls,stop=max_urls,pause=5,lang=langu):
+for i in googlesearch.search(query,num=max_urls_pr,stop=max_urls,pause=10,lang=langu):
     array.append(i)
     print(f'{i}\n')
 
