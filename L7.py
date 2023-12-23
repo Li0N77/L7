@@ -19,19 +19,14 @@ query = input('Enter your dork : ')
 max_urls = int(input('How much sites you want MAX : 100? '))
 langu = input('what web lang you want ex: en,ar ? ')
 
+
+file = open("list.txt", "w")
 array = []
 for i in googlesearch.search(query,num=max_urls,stop=max_urls,pause=10,lang=langu):
     array.append(i)
     print(f'{i}\n')
+    file.write('\n'.join([str(url) for url in array]))
 
-a = input('you want to save it ? y / n ')
-if a.lower() == 'y':
-    save = '\n'.join([str(url) for url in array])
-    name = input('What do u wanna name of the file ? : ')
-    file = open(f"{name}.txt", "w")
-    file.write(save)
-    file.close()
-    print(f'File {name}.txt Saved ')
-    quit()
-else:
-    quit()
+print("Saved in list.txt")
+file.close()
+quit()
