@@ -20,4 +20,4 @@ pip3 uninstall googlesearch-python
 ```
 then run the L7 script
 
-### for any issues send it on issues section
+### for any issues send it to issues section
